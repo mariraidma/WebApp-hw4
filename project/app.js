@@ -79,6 +79,12 @@ app.post('/posts', async(req, res) => {
 app.get('/create', (req, res) => {
     res.render('create');
 });
+app.get('/contactus', (req, res) => {
+    res.render('contactus');
+});
+app.get('/home', (req, res) => {
+    res.render('home');
+});
 app.use((req, res) => {
     res.status(404).render('404');
 });
