@@ -65,26 +65,12 @@ app.delete('/posts/:id', async(req, res) => {
     }
 });
 
-app.put('/posts/:likes', async(req, res) => {
-    try {
-        console.log(req.params);
-        const { id } = req.params;
-        const post = req.body;
-        console.log("add a like request has arrived");
-        const addlike = await pool.query(
-            "SELECT LIKES FROM nodetable WHERE id = $1 LIKES += 1", [id]
-        );
-    } catch (err) {
-        console.error(err.message);
-    }
-});
-
 app.post('/posts', async(req, res) => {
     try {
         const post = req.body;
         console.log(post);
         const newpost = await pool.query(
-            "INSERT INTO nodetable(title, body, urllink, likes) values ($1, $2, $3, $4)RETURNING*", [post.title, post.body, post.urllink, post.likes]
+            "INSERT INTO nodetable(title, body, urllink) values ($1, $2, $3)RETURNING*", [post.title, post.body, post.urllink]
     );
         res.redirect('posts');
     } catch (err) {
