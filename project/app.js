@@ -69,7 +69,7 @@ app.post('/posts', async(req, res) => {
         const post = req.body;
         console.log(post);
         const newpost = await pool.query(
-            "INSERT INTO nodetable(title, body, urllink, image) values ($1, $2, $3, $4)RETURNING*", [post.title, post.body, post.urllink, post.image]
+            "INSERT INTO nodetable(title, body, urllink) values ($1, $2, $3)RETURNING*", [post.title, post.body, post.urllink]
     );
         res.redirect('posts');
     } catch (err) {

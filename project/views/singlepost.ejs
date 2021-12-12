@@ -17,9 +17,11 @@
         <p>
             <%= posts.body %>
         </p>
+        <% if (posts.urllink != null) { %>
         <p>
-            <img src="<%= posts.image %>" />
+            <img src="<%= posts.urllink %>" />
         </p>
+        <% } %>
     </div>
     <a class="delete" data-del="<%= posts.id %>">Delete</a>
 </div>
