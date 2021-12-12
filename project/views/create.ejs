@@ -6,7 +6,7 @@
 <body>
 <%- include('./partials/navbar.ejs') %>
 <br>
-<h1 class="create">Create a post</h1>
+<h1>Create a post</h1>
 <div class="container">
 <div class="create-post">
     <form action="/posts" method="POST">
@@ -27,11 +27,10 @@
         background-color: #1e90ff;
     }
 
-    .create {
+    h1 {
         text-align: center;
         padding-top: 50px;
         color: white;
-        font-family: Avenir;
     }
 
     .container {
@@ -52,12 +51,8 @@
         text-align: center;
     }
 
-    label {
-        font-family: Avenir;
-    }
-
     .textbox {
-        font-family: Avenir;
+        font-family:"Times New Roman", serif;
         box-sizing: border-box;
         border: 2px solid rosybrown;
         height: 30px;
@@ -66,7 +61,7 @@
     }
 
     button {
-        font-family: Avenir;
+        font-family:"Times New Roman", serif;
         background-color: DodgerBlue;
         color: White;
         padding: 5px;

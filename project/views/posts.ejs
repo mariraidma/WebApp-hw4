@@ -7,9 +7,10 @@
     <title>Posts</title>
 </head>
 <body>
-<h1>Posts page</h1>
+<h1 class=postspage>Posts page</h1>
 <%- include('./partials/navbar.ejs') %>
-<div class="postslist">
+    <div class="container">
+    <div class="post">
     <h2>All posts</h2>
     <% if (posts.length > 0) { %>
         <% posts.forEach(post => { %>
@@ -25,62 +26,45 @@
     <% } else { %>
         <p>You did not post anything...</p>
     <% } %>
-</div>
+    </div>
+    </div>
 <%- include('./partials/footer.ejs') %>
 </body>
 <style>
-    section {
-        background-color: DodgerBlue;
+    body {
+        background-color: #1e90ff;
     }
 
-    section div.container {
+    h1 {
+        text-align: center;
+        padding-top: 50px;
+        color: white;
+    }
+
+    .postspage {
+        text-align: center;
+        padding-top: 50px;
+        color: white;
+        font-family: Avenir;
+    }
+
+    .container {
+        min-height: 40vh;
         display: flex;
         justify-content: center;
-        background-color: #ffffff;
-        width: 60%;
-        margin: auto;
+        align-items: center;
+        background-color: #1e90ff;
     }
 
-    section div.posts {
-        flex-direction: column;
+    .post {
+        height: auto;
+        width: 500px;
+        background: #fff;
+        padding: 50px;
+        border-radius: 5px;
+        position: relative;
         text-align: center;
-        margin-top: 20px;
     }
-
-    .post1 {
-        box-shadow: 3px 3px 3px 3px #cac5c5;
-    }
-
-    .post1 .upper {
-        display:flex;
-        justify-content: space-between;
-        color: #8c8888;
-        margin: 10px;
-    }
-
-    .post1 .upper img {
-        height: 40px;
-        width: auto;
-        margin-top: auto;
-    }
-
-    .post1 .inside img{
-        width: 700px;
-        height: auto;
-    }
-
-    .post1 .text {
-        text-align: left;
-        margin: 10px;
-        font-size: 25px;
-    }
-
-    .post1 .text img {
-        width: 100px;
-        height: auto;
-    }
-
-
 
 
 
