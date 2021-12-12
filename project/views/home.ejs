@@ -11,7 +11,30 @@
 <br>
 <br>
 <h1> Welcome to postsite </h1>
-<p> Use navbar to navigate </p>
+
+<div class="container">
+    <div class="login-flexbox">
+        <h2 id="para1">Welcome to PostIt</h2>
+        <p class="login-text"><a href="">Create an account</a></p>
+        <p>Or</p>
+        <p>Please log In</p>
+        <form>
+            <label>
+                <input class="login-textbox" type="text" placeholder="E-mail" >
+            </label>
+
+            <label>
+                <input class="login-textbox" type="password" placeholder="Password">
+            </label>
+        </form>
+        <br>
+        <button class="website-button" type="submit" ><a href="posts.ejs">Log In</a></button>
+        <p><a href="" target="_blank">Forgot Password?</a></p>
+        <div class="postitimage">
+            <img src="../assets/postit.png" alt="PostIt logo" style="width:100px;height:100px;">
+        </div>
+    </div>
+</div>
 
 <%- include('./partials/footer') %>
 </body>
@@ -23,6 +46,73 @@
     h1 {
         color:white;
         font-family: Avenir;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+
+     body {
+         background-color: #1e90ff;
+     }
+
+    #para1 {
+        font-family:Avenir;
+        color: blue;
+    }
+    .container {
+        min-height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1e90ff;
+    }
+
+    .postitimage {
+        position: relative;
+        top: -390px;
+        right: 160px;
+    }
+
+    .login-text ~ p{
+        font-family:Avenir;
+    }
+
+    .login-flexbox {
+        height: 325px;
+        width: 325px;
+        background: #fff;
+        padding: 50px;
+        border-radius: 10px;
+        position: relative;
+        text-align: center;
+    }
+
+    .login-textbox {
+        font-family:Avenir;
+        box-sizing: border-box;
+        border: 2px solid rosybrown;
+        height: 30px;
+        margin: 3px 0;
+        border-radius: 5px;
+    }
+
+    .website-button {
+        font-family:Avenir;
+        background-color: DodgerBlue;
+        color: White;
+        padding: 5px;
+        text-align: center;
+        font-size: 15px;
+        height: 40px;
+    }
+
+    button:hover {
+        background-color: deepskyblue;
+    }
+
+    p + p {
+        color: darkblue;
     }
 </style>
+
 </html>
